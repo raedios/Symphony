@@ -19,6 +19,10 @@
 		804EC82E23535B75008F17FD /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC82923535B75008F17FD /* Transition.swift */; };
 		804EC82F23535B75008F17FD /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC82A23535B75008F17FD /* PushTransition.swift */; };
 		804EC83223535BC3008F17FD /* UIStoryboard+Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83123535BC3008F17FD /* UIStoryboard+Loader.swift */; };
+		804EC83523535CEE008F17FD /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83423535CEE008F17FD /* Author.swift */; };
+		804EC83723535D85008F17FD /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83623535D85008F17FD /* Address.swift */; };
+		804EC83923535E15008F17FD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83823535E15008F17FD /* Post.swift */; };
+		804EC83B23535EB6008F17FD /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83A23535EB6008F17FD /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		804EC82923535B75008F17FD /* Transition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		804EC82A23535B75008F17FD /* PushTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		804EC83123535BC3008F17FD /* UIStoryboard+Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Loader.swift"; sourceTree = "<group>"; };
+		804EC83423535CEE008F17FD /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		804EC83623535D85008F17FD /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		804EC83823535E15008F17FD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		804EC83A23535EB6008F17FD /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				804EC8202353573A008F17FD /* Application Delegate */,
+				804EC83323535CBF008F17FD /* Models */,
 				804EC821235357AA008F17FD /* Modules */,
 				804EC822235357BF008F17FD /* Resources */,
 				804EC82423535B38008F17FD /* Routing */,
@@ -168,6 +177,17 @@
 				804EC83123535BC3008F17FD /* UIStoryboard+Loader.swift */,
 			);
 			path = Loaders;
+			sourceTree = "<group>";
+		};
+		804EC83323535CBF008F17FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				804EC83623535D85008F17FD /* Address.swift */,
+				804EC83423535CEE008F17FD /* Author.swift */,
+				804EC83A23535EB6008F17FD /* Comment.swift */,
+				804EC83823535E15008F17FD /* Post.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				804EC82E23535B75008F17FD /* Transition.swift in Sources */,
+				804EC83923535E15008F17FD /* Post.swift in Sources */,
 				804EC82F23535B75008F17FD /* PushTransition.swift in Sources */,
 				804EC82C23535B75008F17FD /* ModalTransition.swift in Sources */,
+				804EC83523535CEE008F17FD /* Author.swift in Sources */,
+				804EC83723535D85008F17FD /* Address.swift in Sources */,
 				804EC82B23535B75008F17FD /* Animator.swift in Sources */,
+				804EC83B23535EB6008F17FD /* Comment.swift in Sources */,
 				804EC82D23535B75008F17FD /* Router.swift in Sources */,
 				804EC83223535BC3008F17FD /* UIStoryboard+Loader.swift in Sources */,
 				804EC80323535709008F17FD /* ViewController.swift in Sources */,
