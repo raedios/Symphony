@@ -19,18 +19,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-jQ-Ajl">
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-jQ-Ajl">
                         <rect key="frame" x="16" y="12" width="288" height="74"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-g9-dbM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLe-7O-1Tx">
                                 <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-g9-dbM" customClass="CustomImageView" customModule="TestSymphony" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="8Jq-ll-eG1"/>
+                                            <constraint firstAttribute="height" constant="74" id="rrc-Ta-Xk5"/>
+                                        </constraints>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BkR-uM-NDX">
+                                        <rect key="frame" x="27" y="27" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="8Jq-ll-eG1"/>
-                                    <constraint firstAttribute="height" constant="74" id="rrc-Ta-Xk5"/>
+                                    <constraint firstAttribute="trailing" secondItem="nQL-g9-dbM" secondAttribute="trailing" id="J4p-sp-vVl"/>
+                                    <constraint firstAttribute="bottom" secondItem="nQL-g9-dbM" secondAttribute="bottom" id="L00-2f-mKq"/>
+                                    <constraint firstItem="BkR-uM-NDX" firstAttribute="centerY" secondItem="nQL-g9-dbM" secondAttribute="centerY" id="P9f-dS-vgD"/>
+                                    <constraint firstItem="nQL-g9-dbM" firstAttribute="top" secondItem="tLe-7O-1Tx" secondAttribute="top" id="QjR-Lg-Amk"/>
+                                    <constraint firstItem="BkR-uM-NDX" firstAttribute="centerX" secondItem="nQL-g9-dbM" secondAttribute="centerX" id="fej-a3-Ssj"/>
+                                    <constraint firstItem="nQL-g9-dbM" firstAttribute="leading" secondItem="tLe-7O-1Tx" secondAttribute="leading" id="w0E-CG-Dn4"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Asm-nG-Lba">
-                                <rect key="frame" x="82" y="0.0" width="206" height="59.5"/>
+                                <rect key="frame" x="82" y="7.5" width="206" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilma Rippin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-n3-TD1">
                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="20.5"/>
@@ -69,12 +86,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="avatarImage" destination="nQL-g9-dbM" id="fOu-5c-BPA"/>
+                <outlet property="activityIndicator" destination="BkR-uM-NDX" id="mOW-ze-NKE"/>
+                <outlet property="avatarImage" destination="nQL-g9-dbM" id="6MD-bD-RA6"/>
                 <outlet property="emailLabel" destination="ScI-PX-170" id="Ebm-c0-xqu"/>
                 <outlet property="nameLabel" destination="Jl4-n3-TD1" id="j6a-lG-q7f"/>
                 <outlet property="userNameLabel" destination="pOu-ib-l0g" id="aGE-La-box"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="139.95535714285714"/>
+            <point key="canvasLocation" x="137.68115942028987" y="139.62053571428569"/>
         </tableViewCell>
     </objects>
 </document>

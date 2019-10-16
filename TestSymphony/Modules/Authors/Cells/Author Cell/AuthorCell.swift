@@ -16,7 +16,8 @@ class AuthorCell: UITableViewCell {
     
     // MARK: - Views
     
-    @IBOutlet var avatarImage: UIImageView!
+    @IBOutlet var avatarImage: CustomImageView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -31,8 +32,28 @@ class AuthorCell: UITableViewCell {
     
     func configure(with viewModel: AuthorCellViewModel) {
         
+        // Load profile Image
+        showActivityIndicator()
+        avatarImage.loadImageUsing(urlString: viewModel.avatarUrl) {
+            self.hideActivityIndicator()
+        }
+        
         self.nameLabel.text = viewModel.name
         self.userNameLabel.text = viewModel.userName
         self.emailLabel.text = viewModel.email
+    }
+    
+    // MARK: - Local Helpers
+    
+    private func showActivityIndicator() {
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator() {
+        
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
 }
