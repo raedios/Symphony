@@ -12,9 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+     
+        AuthorsServices().fetchAuthors(atPage: "6") { result in
+            
+            switch result {
+            case .success(let authors):
+                print("ok")
+            case .failure(let error):
+                print("Error \(error.localizedDescription)")
+            }
+        }
     }
-
-
 }
-

@@ -12,6 +12,6 @@ struct Address: Decodable {
 
     // MARK: - Properties
     
-    var latitude: Float
-    var longitude: Float
+    var latitude: String
+    var longitude: String
 }

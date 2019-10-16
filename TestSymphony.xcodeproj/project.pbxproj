@@ -23,6 +23,12 @@
 		804EC83723535D85008F17FD /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83623535D85008F17FD /* Address.swift */; };
 		804EC83923535E15008F17FD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83823535E15008F17FD /* Post.swift */; };
 		804EC83B23535EB6008F17FD /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83A23535EB6008F17FD /* Comment.swift */; };
+		804EC83F23536044008F17FD /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC83E23536044008F17FD /* APIError.swift */; };
+		804EC84123536066008F17FD /* NetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC84023536066008F17FD /* NetworkingAPI.swift */; };
+		804EC84423536209008F17FD /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC84323536209008F17FD /* Endpoint.swift */; };
+		804EC84623536247008F17FD /* Authors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC84523536247008F17FD /* Authors.swift */; };
+		804EC849235363E5008F17FD /* APIConstents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC848235363E5008F17FD /* APIConstents.swift */; };
+		804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804EC84B23536644008F17FD /* AuthorsServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		804EC83623535D85008F17FD /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		804EC83823535E15008F17FD /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		804EC83A23535EB6008F17FD /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		804EC83E23536044008F17FD /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		804EC84023536066008F17FD /* NetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPI.swift; sourceTree = "<group>"; };
+		804EC84323536209008F17FD /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		804EC84523536247008F17FD /* Authors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authors.swift; sourceTree = "<group>"; };
+		804EC848235363E5008F17FD /* APIConstents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstents.swift; sourceTree = "<group>"; };
+		804EC84B23536644008F17FD /* AuthorsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +112,10 @@
 				804EC8202353573A008F17FD /* Application Delegate */,
 				804EC83323535CBF008F17FD /* Models */,
 				804EC821235357AA008F17FD /* Modules */,
+				804EC83C23536013008F17FD /* Networking */,
 				804EC822235357BF008F17FD /* Resources */,
 				804EC82423535B38008F17FD /* Routing */,
+				804EC84A23536633008F17FD /* Services */,
 				804EC823235357CE008F17FD /* Supporting Files */,
 			);
 			path = TestSymphony;
@@ -127,8 +141,8 @@
 		804EC821235357AA008F17FD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				804EC8092353570E008F17FD /* LaunchScreen.storyboard */,
 				804EC80223535709008F17FD /* ViewController.swift */,
+				804EC8092353570E008F17FD /* LaunchScreen.storyboard */,
 				804EC80423535709008F17FD /* Main.storyboard */,
 			);
 			path = Modules;
@@ -188,6 +202,50 @@
 				804EC83823535E15008F17FD /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		804EC83C23536013008F17FD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				804EC83D23536026008F17FD /* API */,
+				804EC847235363C2008F17FD /* Common */,
+				804EC842235361E9008F17FD /* Endpoints */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		804EC83D23536026008F17FD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				804EC83E23536044008F17FD /* APIError.swift */,
+				804EC84023536066008F17FD /* NetworkingAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		804EC842235361E9008F17FD /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				804EC84523536247008F17FD /* Authors.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		804EC847235363C2008F17FD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				804EC84323536209008F17FD /* Endpoint.swift */,
+				804EC848235363E5008F17FD /* APIConstents.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		804EC84A23536633008F17FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				804EC84B23536644008F17FD /* AuthorsServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,18 +349,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804EC84123536066008F17FD /* NetworkingAPI.swift in Sources */,
 				804EC82E23535B75008F17FD /* Transition.swift in Sources */,
 				804EC83923535E15008F17FD /* Post.swift in Sources */,
 				804EC82F23535B75008F17FD /* PushTransition.swift in Sources */,
+				804EC84423536209008F17FD /* Endpoint.swift in Sources */,
 				804EC82C23535B75008F17FD /* ModalTransition.swift in Sources */,
 				804EC83523535CEE008F17FD /* Author.swift in Sources */,
 				804EC83723535D85008F17FD /* Address.swift in Sources */,
 				804EC82B23535B75008F17FD /* Animator.swift in Sources */,
+				804EC849235363E5008F17FD /* APIConstents.swift in Sources */,
 				804EC83B23535EB6008F17FD /* Comment.swift in Sources */,
 				804EC82D23535B75008F17FD /* Router.swift in Sources */,
 				804EC83223535BC3008F17FD /* UIStoryboard+Loader.swift in Sources */,
 				804EC80323535709008F17FD /* ViewController.swift in Sources */,
+				804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */,
 				804EC80123535709008F17FD /* AppDelegate.swift in Sources */,
+				804EC84623536247008F17FD /* Authors.swift in Sources */,
+				804EC83F23536044008F17FD /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
