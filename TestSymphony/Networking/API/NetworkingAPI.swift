@@ -42,10 +42,6 @@ extension NetworkingAPI {
                 return
             }
             
-            if let httpUrlResponse = response as? HTTPURLResponse {
-                print("\(httpUrlResponse.allHeaderFields)") // Error
-            }
-            
             if httpResponse.statusCode == 200 {
                 if let data = data {
                     do {

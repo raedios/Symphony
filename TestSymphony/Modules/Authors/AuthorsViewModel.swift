@@ -13,11 +13,13 @@ class AuthorsViewModel {
     // MARK: - Properties
     
     private var router: AuthorsRouter.Routes?
+    private var currentPage: String = "0"
     private var nextPage: String = "1"
     
     // MARK: -
     
     var authors: Box<[Author]> = Box([Author]())
+    var fetchingMore = false
 
     // MARK: - Init
     
@@ -27,8 +29,16 @@ class AuthorsViewModel {
     
     // MARK: - Public Inerfaces
     
+    var sectionsCount: Int {
+        return 2
+    }
+    
     var rowsCount: Int {
         return authors.value.count
+    }
+    
+    var isLastPage: Bool {
+        return Int(currentPage)! >= Int(nextPage)!
     }
     
     // MARK: - Functions
@@ -44,14 +54,24 @@ extension AuthorsViewModel {
     
     func fetchAuthors() {
         
+        fetchingMore = true
+        
         AuthorsServices().fetchAuthors(atPage: nextPage) { result, response  in
             
             switch result {
             case .success(let authors):
+                
                 self.authors.value.append(contentsOf: authors ?? [Author]())
                 
                 if let response = response, let nextPage = NetworkingUtilities().extractNextPageFrom(response: response) {
+                    
+                    // Set the next page to load
+                    self.currentPage = self.nextPage
                     self.nextPage = nextPage
+                } else {
+                    
+                    // We've reached last page
+                    self.currentPage = self.nextPage
                 }
             case .failure(let error):
                 print("Error \(error.localizedDescription)")

@@ -46,11 +46,15 @@ class CustomImageView: UIImageView {
                 }
                 
                 // Cache the laoded image and cache it using its url as the key
-                let imageToCache = UIImage(data: data!)
+                var imageToCache = UIImage(data: data!)
                 
                 // Check if the finished image is the same who started loading
                 if self.imageUrlString == urlString {
                     self.image = imageToCache
+                }
+                
+                if imageToCache == nil {
+                    imageToCache = UIImage(named: "profileImage")
                 }
                 
                 imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)

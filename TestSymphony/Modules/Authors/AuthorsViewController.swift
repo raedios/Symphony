@@ -47,10 +47,10 @@ class AuthorsViewController: UIViewController {
     
     private func setupTableView() {
         
-        //tableView.delegate = self
+        tableView.delegate = self
         tableView.dataSource = self
         
-        // Register Cell
+        // Register Cells
         tableView.register(UINib.nib(named: AuthorCell.identifier), forCellReuseIdentifier: AuthorCell.identifier)
     }
     
@@ -58,6 +58,7 @@ class AuthorsViewController: UIViewController {
         
         viewModel?.authors.bind { [unowned self] in
             if $0.count > 0 {
+                self.viewModel?.fetchingMore = false
                 self.tableView.reloadData()
             }
         }
@@ -68,20 +69,52 @@ class AuthorsViewController: UIViewController {
 
 extension AuthorsViewController: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
         return viewModel.rowsCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let viewModel = viewModel else { return UITableViewCell() }
+
+        return configureAuthorCell(viewModel, at: indexPath.row)
+    }
+    
+    // MARK: - Cells Configutaion methods
+    
+    private func configureAuthorCell(_ viewModel: AuthorsViewModel, at row: Int) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AuthorCell.identifier) as? AuthorCell else { return UITableViewCell() }
         
         // Get the author and configure the cell
-        let author = viewModel.authorViewModel(atIndex: indexPath.row)
+        let author = viewModel.authorViewModel(atIndex: row)
         cell.configure(with: author)
         
         return cell
+    }
+}
+
+// MARK: - UITableView DataSource Methods
+
+extension AuthorsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let viewModel = viewModel else { return }
+        
+        // If we are at last cell load more content
+        if indexPath.row == viewModel.rowsCount - 1 && !viewModel.fetchingMore {
+            if !viewModel.isLastPage {
+                viewModel.fetchAuthors()
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected row: \(indexPath.row)")
     }
 }
