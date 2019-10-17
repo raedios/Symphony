@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-jQ-Ajl">
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-jQ-Ajl">
                         <rect key="frame" x="16" y="12" width="288" height="74"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLe-7O-1Tx">
@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Asm-nG-Lba">
-                                <rect key="frame" x="82" y="7.5" width="206" height="59.5"/>
+                                <rect key="frame" x="90" y="7.5" width="198" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilma Rippin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-n3-TD1">
                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="20.5"/>

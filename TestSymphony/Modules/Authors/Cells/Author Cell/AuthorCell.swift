@@ -26,6 +26,7 @@ class AuthorCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
     }
 
     // MARK: - Configuration
@@ -44,6 +45,10 @@ class AuthorCell: UITableViewCell {
     }
     
     // MARK: - Local Helpers
+    
+    private func setupUI() {
+        avatarImage.makeRounded()
+    }
     
     private func showActivityIndicator() {
         

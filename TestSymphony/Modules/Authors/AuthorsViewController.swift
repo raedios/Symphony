@@ -32,6 +32,7 @@ class AuthorsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
         setupTableView()
         bind()
         
@@ -39,6 +40,10 @@ class AuthorsViewController: UIViewController {
     }
     
     // MARK: - Local Helpers
+    
+    private func setupLocalization() {
+        self.title = i18n.authorsTitle
+    }
     
     private func setupTableView() {
         
