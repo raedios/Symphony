@@ -17,14 +17,14 @@ let maxRecordsPerRequest = "20"
 protocol NetworkingAPI {
     
     var session: URLSession { get }
-    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>) -> Void)
+    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>, URLResponse?) -> Void)
 }
 
 // MARK: - API Implementation
 
 extension NetworkingAPI {
     
-    typealias JSONTaskCompletionHandler = (Decodable?, APIError?) -> Void
+    typealias JSONTaskCompletionHandler = (Decodable?, URLResponse?, APIError?) -> Void
     
     /// Cell Request and Parse Data To JSON<T>, in case of an error returns the corresponding error information.
     ///
@@ -38,7 +38,7 @@ extension NetworkingAPI {
         let task = session.dataTask(with: request) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(nil, .requestFailed)
+                completion(nil, nil, .requestFailed)
                 return
             }
             
@@ -50,15 +50,15 @@ extension NetworkingAPI {
                 if let data = data {
                     do {
                         let genericModel = try JSONDecoder().decode(decodingType, from: data)
-                        completion(genericModel, nil)
+                        completion(genericModel, httpResponse, nil)
                     } catch {
-                        completion(nil, .jsonConversionFailure)
+                        completion(nil, httpResponse, .jsonConversionFailure)
                     }
                 } else {
-                    completion(nil, .invalidData)
+                    completion(nil, httpResponse, .invalidData)
                 }
             } else {
-                completion(nil, .responseUnsuccessful)
+                completion(nil, httpResponse, .responseUnsuccessful)
             }
         }
         return task
@@ -70,25 +70,25 @@ extension NetworkingAPI {
     ///   - request: URLRequest to execute
     ///   - decode: Type of object to be decoded
     ///   - completion: A completion handler containing either the Decoded Object or an Error in case of failure
-    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>) -> Void) {
+    func fetch<T: Decodable>(with request: URLRequest, decode: @escaping (Decodable) -> T?, completion: @escaping (Result<T, APIError>, URLResponse?) -> Void) {
         
-        let task = decodingTask(with: request, decodingType: T.self) { (json , error) in
+        let task = decodingTask(with: request, decodingType: T.self) { (json, response, error) in
             
             DispatchQueue.main.async {
                 
                 guard let json = json else {
                     if let error = error {
-                        completion(Result.failure(error))
+                        completion(Result.failure(error), response)
                     } else {
-                        completion(Result.failure(.invalidData))
+                        completion(Result.failure(.invalidData), response)
                     }
                     return
                 }
                 
                 if let value = decode(json) {
-                    completion(.success(value))
+                    completion(.success(value), response)
                 } else {
-                    completion(.failure(.jsonParsingFailure))
+                    completion(.failure(.jsonParsingFailure), response)
                 }
             }
         }

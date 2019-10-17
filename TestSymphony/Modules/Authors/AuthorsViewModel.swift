@@ -13,6 +13,7 @@ class AuthorsViewModel {
     // MARK: - Properties
     
     private var router: AuthorsRouter.Routes?
+    private var nextPage: String = "1"
     
     // MARK: -
     
@@ -43,11 +44,15 @@ extension AuthorsViewModel {
     
     func fetchAuthors() {
         
-        AuthorsServices().fetchAuthors(atPage: "6") { result in
+        AuthorsServices().fetchAuthors(atPage: nextPage) { result, response  in
             
             switch result {
             case .success(let authors):
                 self.authors.value.append(contentsOf: authors ?? [Author]())
+                
+                if let response = response, let nextPage = NetworkingUtilities().extractNextPageFrom(response: response) {
+                    self.nextPage = nextPage
+                }
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
             }

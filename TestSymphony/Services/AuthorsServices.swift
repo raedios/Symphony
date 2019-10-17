@@ -26,7 +26,7 @@ class AuthorsServices: NetworkingAPI {
     
     // MARK: - Requests
     
-    func fetchAuthors(atPage page: String, completion: @escaping (Result<[Author]?, APIError>) -> Void) {
+    func fetchAuthors(atPage page: String, completion: @escaping (Result<[Author]?, APIError>, URLResponse?) -> Void) {
         
         let endPoint = Authors.authors(at: page)
         
