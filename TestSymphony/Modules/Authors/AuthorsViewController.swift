@@ -115,6 +115,9 @@ extension AuthorsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected row: \(indexPath.row)")
+        
+        // Deselect the row
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
 }
