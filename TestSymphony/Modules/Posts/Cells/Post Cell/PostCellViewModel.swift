@@ -16,6 +16,10 @@ struct PostCellViewModel {
     
     // MARK: - Public Interfaces
     
+    var imageUrl: String {
+        return post.imageUrl
+    }
+    
     var title: String {
         return post.title
     }

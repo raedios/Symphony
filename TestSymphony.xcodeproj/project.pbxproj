@@ -66,10 +66,19 @@
 		80C67334235C7E6300391199 /* CommentsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67333235C7E6300391199 /* CommentsServices.swift */; };
 		80C6733D235C923C00391199 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6733B235C923C00391199 /* PostDetailCell.swift */; };
 		80C6733E235C923C00391199 /* PostDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C6733C235C923C00391199 /* PostDetailCell.xib */; };
-		80C67346235C944D00391199 /* PostDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67345235C944D00391199 /* PostDetailCellViewModel.swift */; };
 		80C6734A235C9E5E00391199 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67348235C9E5E00391199 /* CommentCell.swift */; };
 		80C6734B235C9E5E00391199 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C67349235C9E5E00391199 /* CommentCell.xib */; };
 		80C6734D235CA07600391199 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734C235CA07600391199 /* CommentCellViewModel.swift */; };
+		80C67352235CA89400391199 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67351235CA89400391199 /* XCTestCase+Extension.swift */; };
+		80C67359235CA95100391199 /* Authors.json in Resources */ = {isa = PBXBuildFile; fileRef = 80C67356235CA95000391199 /* Authors.json */; };
+		80C6735A235CA95100391199 /* Comments.json in Resources */ = {isa = PBXBuildFile; fileRef = 80C67357235CA95000391199 /* Comments.json */; };
+		80C6735B235CA95100391199 /* Posts.json in Resources */ = {isa = PBXBuildFile; fileRef = 80C67358235CA95000391199 /* Posts.json */; };
+		80C67360235CA9A600391199 /* AuthorsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6735F235CA9A600391199 /* AuthorsViewModelTests.swift */; };
+		80C67362235CA9BD00391199 /* AuthorCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67361235CA9BD00391199 /* AuthorCellViewModelTests.swift */; };
+		80C67364235CA9CB00391199 /* CommentsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67363235CA9CB00391199 /* CommentsViewModelTests.swift */; };
+		80C67366235CA9D700391199 /* CommentCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67365235CA9D700391199 /* CommentCellViewModelTests.swift */; };
+		80C6736A235CAA3700391199 /* PostsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67369235CAA3700391199 /* PostsViewModelTests.swift */; };
+		80C6736C235CAA4800391199 /* PostCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6736B235CAA4800391199 /* PostCellViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,10 +156,19 @@
 		80C67333235C7E6300391199 /* CommentsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsServices.swift; sourceTree = "<group>"; };
 		80C6733B235C923C00391199 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		80C6733C235C923C00391199 /* PostDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailCell.xib; sourceTree = "<group>"; };
-		80C67345235C944D00391199 /* PostDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCellViewModel.swift; sourceTree = "<group>"; };
 		80C67348235C9E5E00391199 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		80C67349235C9E5E00391199 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		80C6734C235CA07600391199 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
+		80C67351235CA89400391199 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		80C67356235CA95000391199 /* Authors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Authors.json; sourceTree = "<group>"; };
+		80C67357235CA95000391199 /* Comments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comments.json; sourceTree = "<group>"; };
+		80C67358235CA95000391199 /* Posts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Posts.json; sourceTree = "<group>"; };
+		80C6735F235CA9A600391199 /* AuthorsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewModelTests.swift; sourceTree = "<group>"; };
+		80C67361235CA9BD00391199 /* AuthorCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCellViewModelTests.swift; sourceTree = "<group>"; };
+		80C67363235CA9CB00391199 /* CommentsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModelTests.swift; sourceTree = "<group>"; };
+		80C67365235CA9D700391199 /* CommentCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModelTests.swift; sourceTree = "<group>"; };
+		80C67369235CAA3700391199 /* PostsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModelTests.swift; sourceTree = "<group>"; };
+		80C6736B235CAA4800391199 /* PostCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,8 +313,10 @@
 		804EC8142353570E008F17FD /* TestSymphonyTests */ = {
 			isa = PBXGroup;
 			children = (
-				804EC8152353570E008F17FD /* TestSymphonyTests.swift */,
-				804EC8172353570E008F17FD /* Info.plist */,
+				80C67350235CA88700391199 /* Extensions */,
+				80C67353235CA8A600391199 /* Stubs */,
+				80C67354235CA8AE00391199 /* Supporting Files */,
+				80C67355235CA8CA00391199 /* Test Cases */,
 			);
 			path = TestSymphonyTests;
 			sourceTree = "<group>";
@@ -500,19 +520,18 @@
 			isa = PBXGroup;
 			children = (
 				80C67347235C9E4800391199 /* Comment Cell */,
-				80C67336235C85D100391199 /* Post Header View */,
+				80C67336235C85D100391199 /* Post Detail Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		80C67336235C85D100391199 /* Post Header View */ = {
+		80C67336235C85D100391199 /* Post Detail Cell */ = {
 			isa = PBXGroup;
 			children = (
 				80C6733B235C923C00391199 /* PostDetailCell.swift */,
-				80C67345235C944D00391199 /* PostDetailCellViewModel.swift */,
 				80C6733C235C923C00391199 /* PostDetailCell.xib */,
 			);
-			path = "Post Header View";
+			path = "Post Detail Cell";
 			sourceTree = "<group>";
 		};
 		80C67344235C943000391199 /* View Models */ = {
@@ -530,6 +549,78 @@
 				80C67349235C9E5E00391199 /* CommentCell.xib */,
 			);
 			path = "Comment Cell";
+			sourceTree = "<group>";
+		};
+		80C67350235CA88700391199 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80C67351235CA89400391199 /* XCTestCase+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80C67353235CA8A600391199 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				80C67356235CA95000391199 /* Authors.json */,
+				80C67357235CA95000391199 /* Comments.json */,
+				80C67358235CA95000391199 /* Posts.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		80C67354235CA8AE00391199 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				804EC8172353570E008F17FD /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		80C67355235CA8CA00391199 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				80C6735C235CA97A00391199 /* ViewModels */,
+				804EC8152353570E008F17FD /* TestSymphonyTests.swift */,
+			);
+			path = "Test Cases";
+			sourceTree = "<group>";
+		};
+		80C6735C235CA97A00391199 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				80C6736D235CAABC00391199 /* Authors */,
+				80C6736E235CAAC700391199 /* Comments */,
+				80C6736F235CAAD000391199 /* Posts */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		80C6736D235CAABC00391199 /* Authors */ = {
+			isa = PBXGroup;
+			children = (
+				80C6735F235CA9A600391199 /* AuthorsViewModelTests.swift */,
+				80C67361235CA9BD00391199 /* AuthorCellViewModelTests.swift */,
+			);
+			path = Authors;
+			sourceTree = "<group>";
+		};
+		80C6736E235CAAC700391199 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				80C67363235CA9CB00391199 /* CommentsViewModelTests.swift */,
+				80C67365235CA9D700391199 /* CommentCellViewModelTests.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		80C6736F235CAAD000391199 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				80C67369235CAA3700391199 /* PostsViewModelTests.swift */,
+				80C6736B235CAA4800391199 /* PostCellViewModelTests.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -630,6 +721,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C67359235CA95100391199 /* Authors.json in Resources */,
+				80C6735B235CA95100391199 /* Posts.json in Resources */,
+				80C6735A235CA95100391199 /* Comments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +778,6 @@
 				804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */,
 				800C3CD72357A91900E8D5BB /* AuthorsRoute.swift in Sources */,
 				804EC80123535709008F17FD /* AppDelegate.swift in Sources */,
-				80C67346235C944D00391199 /* PostDetailCellViewModel.swift in Sources */,
 				80C67330235C776D00391199 /* Appearance.swift in Sources */,
 				80C6732D235C743B00391199 /* CommentsViewModel.swift in Sources */,
 				804EC84623536247008F17FD /* Authors.swift in Sources */,
@@ -700,7 +793,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C67352235CA89400391199 /* XCTestCase+Extension.swift in Sources */,
+				80C67360235CA9A600391199 /* AuthorsViewModelTests.swift in Sources */,
+				80C67366235CA9D700391199 /* CommentCellViewModelTests.swift in Sources */,
+				80C67364235CA9CB00391199 /* CommentsViewModelTests.swift in Sources */,
+				80C6736C235CAA4800391199 /* PostCellViewModelTests.swift in Sources */,
 				804EC8162353570E008F17FD /* TestSymphonyTests.swift in Sources */,
+				80C6736A235CAA3700391199 /* PostsViewModelTests.swift in Sources */,
+				80C67362235CA9BD00391199 /* AuthorCellViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,7 +1003,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestSymphonyTests/Info.plist;
+				INFOPLIST_FILE = "TestSymphonyTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -923,7 +1023,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TestSymphonyTests/Info.plist;
+				INFOPLIST_FILE = "TestSymphonyTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

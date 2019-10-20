@@ -32,7 +32,7 @@ class PostDetailCell: UITableViewCell {
     
     // MARK: - Configuration
     
-    func configure(with viewModel: PostDetailCellViewModel) {
+    func configure(with viewModel: PostCellViewModel) {
         
         // Load profile Image
         showActivityIndicator()

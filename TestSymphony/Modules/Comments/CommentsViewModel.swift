@@ -42,8 +42,8 @@ class CommentsViewModel {
         }
     }
     
-    func postDetailViewModel() -> PostDetailCellViewModel {
-        return PostDetailCellViewModel(post: post)
+    func postDetailViewModel() -> PostCellViewModel {
+        return PostCellViewModel(post: post)
     }
     
     func commentViewModel(atIndex index: Int) -> CommentCellViewModel {
