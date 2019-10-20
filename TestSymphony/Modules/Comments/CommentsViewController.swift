@@ -52,6 +52,7 @@ class CommentsViewController: UIViewController {
 
         // Register Cells
         tableView.register(UINib.nib(named: PostDetailCell.identifier), forCellReuseIdentifier: PostDetailCell.identifier)
+        tableView.register(UINib.nib(named: CommentCell.identifier), forCellReuseIdentifier: CommentCell.identifier)
     }
     
     private func bind() {
@@ -82,10 +83,11 @@ extension CommentsViewController: UITableViewDataSource {
         
         if indexPath.section == 0 {
             return configurePostCell()
+        } else {
+            return configureCommentCell(at: indexPath.row)
         }
-        
-        return UITableViewCell()
     }
+    
     // MARK: - Cells Configutaion methods
     
     private func configurePostCell() -> UITableViewCell {
@@ -95,6 +97,17 @@ extension CommentsViewController: UITableViewDataSource {
         // Get the author and configure the cell
         let post = viewModel!.postDetailViewModel()
         cell.configure(with: post)
+        
+        return cell
+    }
+    
+    private func configureCommentCell(at index: Int) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier) as? CommentCell else { return UITableViewCell() }
+        
+        // Get the comment and configure the cell
+        let comment = viewModel!.commentViewModel(atIndex: index)
+        cell.configure(with: comment)
         
         return cell
     }

@@ -45,6 +45,10 @@ class CommentsViewModel {
     func postDetailViewModel() -> PostDetailCellViewModel {
         return PostDetailCellViewModel(post: post)
     }
+    
+    func commentViewModel(atIndex index: Int) -> CommentCellViewModel {
+        return CommentCellViewModel(comment: comments.value[index])
+    }
 }
 
 // MARK: - Requests

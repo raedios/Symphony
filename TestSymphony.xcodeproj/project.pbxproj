@@ -67,6 +67,9 @@
 		80C6733D235C923C00391199 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6733B235C923C00391199 /* PostDetailCell.swift */; };
 		80C6733E235C923C00391199 /* PostDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C6733C235C923C00391199 /* PostDetailCell.xib */; };
 		80C67346235C944D00391199 /* PostDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67345235C944D00391199 /* PostDetailCellViewModel.swift */; };
+		80C6734A235C9E5E00391199 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67348235C9E5E00391199 /* CommentCell.swift */; };
+		80C6734B235C9E5E00391199 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C67349235C9E5E00391199 /* CommentCell.xib */; };
+		80C6734D235CA07600391199 /* CommentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6734C235CA07600391199 /* CommentCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,9 @@
 		80C6733B235C923C00391199 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
 		80C6733C235C923C00391199 /* PostDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailCell.xib; sourceTree = "<group>"; };
 		80C67345235C944D00391199 /* PostDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCellViewModel.swift; sourceTree = "<group>"; };
+		80C67348235C9E5E00391199 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		80C67349235C9E5E00391199 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		80C6734C235CA07600391199 /* CommentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +499,7 @@
 		80C67335235C85C900391199 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				80C67347235C9E4800391199 /* Comment Cell */,
 				80C67336235C85D100391199 /* Post Header View */,
 			);
 			path = Cells;
@@ -513,6 +520,16 @@
 			children = (
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		80C67347235C9E4800391199 /* Comment Cell */ = {
+			isa = PBXGroup;
+			children = (
+				80C67348235C9E5E00391199 /* CommentCell.swift */,
+				80C6734C235CA07600391199 /* CommentCellViewModel.swift */,
+				80C67349235C9E5E00391199 /* CommentCell.xib */,
+			);
+			path = "Comment Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -603,6 +620,7 @@
 				80C6733E235C923C00391199 /* PostDetailCell.xib in Resources */,
 				80C6731D235C55EF00391199 /* PostCell.xib in Resources */,
 				804EC8082353570E008F17FD /* Assets.xcassets in Resources */,
+				80C6734B235C9E5E00391199 /* CommentCell.xib in Resources */,
 				800C3CE72357B19500E8D5BB /* AuthorCell.xib in Resources */,
 				804EC80623535709008F17FD /* Main.storyboard in Resources */,
 			);
@@ -633,6 +651,7 @@
 				80C6732B235C742E00391199 /* CommentsViewController.swift in Sources */,
 				80C67322235C64D400391199 /* Utilities.swift in Sources */,
 				800C3D0423587D3B00E8D5BB /* String+Extension.swift in Sources */,
+				80C6734D235CA07600391199 /* CommentCellViewModel.swift in Sources */,
 				800C3CE62357B19500E8D5BB /* AuthorCell.swift in Sources */,
 				80C67324235C6A2800391199 /* Date+Extension.swift in Sources */,
 				804EC82C23535B75008F17FD /* ModalTransition.swift in Sources */,
@@ -661,6 +680,7 @@
 				804EC82D23535B75008F17FD /* Router.swift in Sources */,
 				804EC83223535BC3008F17FD /* UIStoryboard+Loader.swift in Sources */,
 				800C3CDB2357A93100E8D5BB /* AuthorsViewController.swift in Sources */,
+				80C6734A235C9E5E00391199 /* CommentCell.swift in Sources */,
 				804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */,
 				800C3CD72357A91900E8D5BB /* AuthorsRoute.swift in Sources */,
 				804EC80123535709008F17FD /* AppDelegate.swift in Sources */,
