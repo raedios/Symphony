@@ -47,14 +47,11 @@ class CommentsViewController: UIViewController {
     
     private func setupTableView() {
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        // Register Header
-        //tableView.register(UINib(nibName: AuthorHeaderView.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: AuthorHeaderView.identifier)
-        
         // Register Cells
-        //tableView.register(UINib.nib(named: PostCell.identifier), forCellReuseIdentifier: PostCell.identifier)
+        tableView.register(UINib.nib(named: PostDetailCell.identifier), forCellReuseIdentifier: PostDetailCell.identifier)
     }
     
     private func bind() {
@@ -65,4 +62,47 @@ class CommentsViewController: UIViewController {
             }
         }
     }
+}
+
+// MARK: - UITableView DataSource Methods
+
+extension CommentsViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.sectionCount
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.rowsCount(for: section)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            return configurePostCell()
+        }
+        
+        return UITableViewCell()
+    }
+    // MARK: - Cells Configutaion methods
+    
+    private func configurePostCell() -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailCell.identifier) as? PostDetailCell else { return UITableViewCell() }
+        
+        // Get the author and configure the cell
+        let post = viewModel!.postDetailViewModel()
+        cell.configure(with: post)
+        
+        return cell
+    }
+}
+
+// MARK: - UITableView Delegate Methods
+
+extension CommentsViewController: UITableViewDelegate {
+    
+    
 }

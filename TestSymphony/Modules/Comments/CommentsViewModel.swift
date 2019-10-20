@@ -26,6 +26,25 @@ class CommentsViewModel {
         self.post = post
     }
     
+    // MARK: - Public Interfaces
+    
+    var sectionCount: Int {
+        return 2
+    }
+    
+    // MARK: - Functions
+    
+    func rowsCount(for section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return comments.value.count
+        }
+    }
+    
+    func postDetailViewModel() -> PostDetailCellViewModel {
+        return PostDetailCellViewModel(post: post)
+    }
 }
 
 // MARK: - Requests

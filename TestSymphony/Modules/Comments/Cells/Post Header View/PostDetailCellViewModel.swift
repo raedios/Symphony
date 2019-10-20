@@ -1,5 +1,5 @@
 //
-//  PostCellViewModel.swift
+//  PostDetailCellViewModel.swift
 //  TestSymphony
 //
 //  Created by Raed MEZRAOUI on 19-10-20.
@@ -8,13 +8,17 @@
 
 import Foundation
 
-struct PostCellViewModel {
+struct PostDetailCellViewModel {
     
     // MARK: - Properties
     
     let post: Post
     
     // MARK: - Public Interfaces
+    
+    var imageUrl: String {
+        return post.imageUrl
+    }
     
     var title: String {
         return post.title

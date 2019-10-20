@@ -64,6 +64,9 @@
 		80C67330235C776D00391199 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732F235C776D00391199 /* Appearance.swift */; };
 		80C67332235C7D9400391199 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67331235C7D9400391199 /* Comments.swift */; };
 		80C67334235C7E6300391199 /* CommentsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67333235C7E6300391199 /* CommentsServices.swift */; };
+		80C6733D235C923C00391199 /* PostDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6733B235C923C00391199 /* PostDetailCell.swift */; };
+		80C6733E235C923C00391199 /* PostDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C6733C235C923C00391199 /* PostDetailCell.xib */; };
+		80C67346235C944D00391199 /* PostDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67345235C944D00391199 /* PostDetailCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +142,9 @@
 		80C6732F235C776D00391199 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		80C67331235C7D9400391199 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
 		80C67333235C7E6300391199 /* CommentsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsServices.swift; sourceTree = "<group>"; };
+		80C6733B235C923C00391199 /* PostDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCell.swift; sourceTree = "<group>"; };
+		80C6733C235C923C00391199 /* PostDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailCell.xib; sourceTree = "<group>"; };
+		80C67345235C944D00391199 /* PostDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +476,8 @@
 				80C67328235C741B00391199 /* CommentsRouter.swift */,
 				80C6732A235C742E00391199 /* CommentsViewController.swift */,
 				80C6732C235C743B00391199 /* CommentsViewModel.swift */,
+				80C67335235C85C900391199 /* Cells */,
+				80C67344235C943000391199 /* View Models */,
 			);
 			path = Comments;
 			sourceTree = "<group>";
@@ -480,6 +488,31 @@
 				80C6732F235C776D00391199 /* Appearance.swift */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		80C67335235C85C900391199 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80C67336235C85D100391199 /* Post Header View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		80C67336235C85D100391199 /* Post Header View */ = {
+			isa = PBXGroup;
+			children = (
+				80C6733B235C923C00391199 /* PostDetailCell.swift */,
+				80C67345235C944D00391199 /* PostDetailCellViewModel.swift */,
+				80C6733C235C923C00391199 /* PostDetailCell.xib */,
+			);
+			path = "Post Header View";
+			sourceTree = "<group>";
+		};
+		80C67344235C943000391199 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -567,6 +600,7 @@
 				80C67318235C4C3600391199 /* AuthorHeaderView.xib in Resources */,
 				800C3CFD23587C7E00E8D5BB /* Localizable.strings in Resources */,
 				804EC80B2353570E008F17FD /* LaunchScreen.storyboard in Resources */,
+				80C6733E235C923C00391199 /* PostDetailCell.xib in Resources */,
 				80C6731D235C55EF00391199 /* PostCell.xib in Resources */,
 				804EC8082353570E008F17FD /* Assets.xcassets in Resources */,
 				800C3CE72357B19500E8D5BB /* AuthorCell.xib in Resources */,
@@ -610,6 +644,7 @@
 				80C67329235C741B00391199 /* CommentsRouter.swift in Sources */,
 				80C67309235B0F5700391199 /* PostsServices.swift in Sources */,
 				804EC83523535CEE008F17FD /* Author.swift in Sources */,
+				80C6733D235C923C00391199 /* PostDetailCell.swift in Sources */,
 				80C67334235C7E6300391199 /* CommentsServices.swift in Sources */,
 				804EC83723535D85008F17FD /* Address.swift in Sources */,
 				804EC82B23535B75008F17FD /* Animator.swift in Sources */,
@@ -629,6 +664,7 @@
 				804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */,
 				800C3CD72357A91900E8D5BB /* AuthorsRoute.swift in Sources */,
 				804EC80123535709008F17FD /* AppDelegate.swift in Sources */,
+				80C67346235C944D00391199 /* PostDetailCellViewModel.swift in Sources */,
 				80C67330235C776D00391199 /* Appearance.swift in Sources */,
 				80C6732D235C743B00391199 /* CommentsViewModel.swift in Sources */,
 				804EC84623536247008F17FD /* Authors.swift in Sources */,

@@ -94,7 +94,7 @@ extension AuthorsViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableView DataSource Methods
+// MARK: - UITableView Delegate Methods
 
 extension AuthorsViewController: UITableViewDelegate {
     
