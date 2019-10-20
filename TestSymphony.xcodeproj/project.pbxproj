@@ -52,6 +52,11 @@
 		80C67312235B114300391199 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67311235B114300391199 /* PostsViewModel.swift */; };
 		80C67316235C4C1500391199 /* AuthorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67315235C4C1500391199 /* AuthorHeaderView.swift */; };
 		80C67318235C4C3600391199 /* AuthorHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C67317235C4C3600391199 /* AuthorHeaderView.xib */; };
+		80C6731C235C55EF00391199 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6731A235C55EF00391199 /* PostCell.swift */; };
+		80C6731D235C55EF00391199 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C6731B235C55EF00391199 /* PostCell.xib */; };
+		80C6731F235C5FBC00391199 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6731E235C5FBC00391199 /* PostCellViewModel.swift */; };
+		80C67322235C64D400391199 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67321235C64D400391199 /* Utilities.swift */; };
+		80C67324235C6A2800391199 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67323235C6A2800391199 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,11 @@
 		80C67311235B114300391199 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		80C67315235C4C1500391199 /* AuthorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorHeaderView.swift; sourceTree = "<group>"; };
 		80C67317235C4C3600391199 /* AuthorHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorHeaderView.xib; sourceTree = "<group>"; };
+		80C6731A235C55EF00391199 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		80C6731B235C55EF00391199 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		80C6731E235C5FBC00391199 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		80C67321235C64D400391199 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		80C67323235C6A2800391199 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +168,7 @@
 		800C3CDF2357B09A00E8D5BB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				80C67320235C649000391199 /* Utilities */,
 				800C3CEF2357B93100E8D5BB /* Base Elements */,
 				800C3CE02357B0A400E8D5BB /* Box */,
 				800C3CEC2357B5AA00E8D5BB /* Extensions */,
@@ -187,6 +198,7 @@
 		800C3CEC2357B5AA00E8D5BB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				80C67323235C6A2800391199 /* Date+Extension.swift */,
 				800C3D0323587D3B00E8D5BB /* String+Extension.swift */,
 				800C3CED2357B5BB00E8D5BB /* UIApplication+Extension.swift */,
 				800C3CF823586F8700E8D5BB /* UIImageView+Extension.swift */,
@@ -401,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				80C67314235C4BDD00391199 /* Author Header View */,
+				80C67319235C55C500391199 /* Post Cell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -412,6 +425,24 @@
 				80C67317235C4C3600391199 /* AuthorHeaderView.xib */,
 			);
 			path = "Author Header View";
+			sourceTree = "<group>";
+		};
+		80C67319235C55C500391199 /* Post Cell */ = {
+			isa = PBXGroup;
+			children = (
+				80C6731A235C55EF00391199 /* PostCell.swift */,
+				80C6731E235C5FBC00391199 /* PostCellViewModel.swift */,
+				80C6731B235C55EF00391199 /* PostCell.xib */,
+			);
+			path = "Post Cell";
+			sourceTree = "<group>";
+		};
+		80C67320235C649000391199 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				80C67321235C64D400391199 /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +530,7 @@
 				80C67318235C4C3600391199 /* AuthorHeaderView.xib in Resources */,
 				800C3CFD23587C7E00E8D5BB /* Localizable.strings in Resources */,
 				804EC80B2353570E008F17FD /* LaunchScreen.storyboard in Resources */,
+				80C6731D235C55EF00391199 /* PostCell.xib in Resources */,
 				804EC8082353570E008F17FD /* Assets.xcassets in Resources */,
 				800C3CE72357B19500E8D5BB /* AuthorCell.xib in Resources */,
 				804EC80623535709008F17FD /* Main.storyboard in Resources */,
@@ -521,13 +553,16 @@
 			files = (
 				804EC84123536066008F17FD /* NetworkingAPI.swift in Sources */,
 				804EC82E23535B75008F17FD /* Transition.swift in Sources */,
+				80C6731C235C55EF00391199 /* PostCell.swift in Sources */,
 				804EC83923535E15008F17FD /* Post.swift in Sources */,
 				804EC82F23535B75008F17FD /* PushTransition.swift in Sources */,
 				800C3CEE2357B5BB00E8D5BB /* UIApplication+Extension.swift in Sources */,
 				804EC84423536209008F17FD /* Endpoint.swift in Sources */,
 				800C3CD92357A92200E8D5BB /* AuthorsRouter.swift in Sources */,
+				80C67322235C64D400391199 /* Utilities.swift in Sources */,
 				800C3D0423587D3B00E8D5BB /* String+Extension.swift in Sources */,
 				800C3CE62357B19500E8D5BB /* AuthorCell.swift in Sources */,
+				80C67324235C6A2800391199 /* Date+Extension.swift in Sources */,
 				804EC82C23535B75008F17FD /* ModalTransition.swift in Sources */,
 				800C3CDD2357A93B00E8D5BB /* AuthorsViewModel.swift in Sources */,
 				800C3CE92357B1A800E8D5BB /* AuthorCellViewModel.swift in Sources */,
@@ -546,6 +581,7 @@
 				800C3CF12357B94900E8D5BB /* CustomImageView.swift in Sources */,
 				800C3D0A2358856100E8D5BB /* NetworkingUtilities.swift in Sources */,
 				800C3CEB2357B55000E8D5BB /* UINib+Loader.swift in Sources */,
+				80C6731F235C5FBC00391199 /* PostCellViewModel.swift in Sources */,
 				804EC82D23535B75008F17FD /* Router.swift in Sources */,
 				804EC83223535BC3008F17FD /* UIStoryboard+Loader.swift in Sources */,
 				800C3CDB2357A93100E8D5BB /* AuthorsViewController.swift in Sources */,

@@ -38,6 +38,9 @@ class PostsViewModel {
         return AuthorCellViewModel(author: author)
     }
     
+    func postViewModel(atIndex index: Int) -> PostCellViewModel {
+        return PostCellViewModel(post: posts.value[index])
+    }
 }
 
 // MARK: - Requests
@@ -50,7 +53,7 @@ extension PostsViewModel {
             
             switch result {
             case .success(let posts):
-                self.posts.value = posts ?? [Post]()
+                self.posts.value = posts?.sorted (by: { $0.date < $1.date }) ?? [Post]()
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
             }

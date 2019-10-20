@@ -56,7 +56,7 @@ class PostsViewController: UIViewController {
         tableView.register(UINib(nibName: AuthorHeaderView.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: AuthorHeaderView.identifier)
         
         // Register Cells
-        //tableView.register(UINib.nib(named: AuthorCell.identifier), forCellReuseIdentifier: AuthorCell.identifier)
+        tableView.register(UINib.nib(named: PostCell.identifier), forCellReuseIdentifier: PostCell.identifier)
     }
     
     private func bind() {
@@ -79,11 +79,15 @@ extension PostsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let _ = viewModel else { return UITableViewCell() }
-
-        return UITableViewCell()
+        guard let viewModel = viewModel else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier) as? PostCell else { return UITableViewCell() }
+        
+        // Get the post and configure the cell
+        let post = viewModel.postViewModel(atIndex: indexPath.row)
+        cell.configure(with: post)
+        
+        return cell
     }
-    
 }
 
 // MARK: - UITableView DataSource Methods
