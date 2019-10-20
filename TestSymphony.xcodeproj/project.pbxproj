@@ -50,6 +50,8 @@
 		80C6730E235B112500391199 /* PostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6730D235B112500391199 /* PostsRouter.swift */; };
 		80C67310235B113800391199 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6730F235B113800391199 /* PostsViewController.swift */; };
 		80C67312235B114300391199 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67311235B114300391199 /* PostsViewModel.swift */; };
+		80C67316235C4C1500391199 /* AuthorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67315235C4C1500391199 /* AuthorHeaderView.swift */; };
+		80C67318235C4C3600391199 /* AuthorHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C67317235C4C3600391199 /* AuthorHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		80C6730D235B112500391199 /* PostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRouter.swift; sourceTree = "<group>"; };
 		80C6730F235B113800391199 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		80C67311235B114300391199 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		80C67315235C4C1500391199 /* AuthorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorHeaderView.swift; sourceTree = "<group>"; };
+		80C67317235C4C3600391199 /* AuthorHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,8 +392,26 @@
 				80C6730D235B112500391199 /* PostsRouter.swift */,
 				80C6730F235B113800391199 /* PostsViewController.swift */,
 				80C67311235B114300391199 /* PostsViewModel.swift */,
+				80C67313235C4BD000391199 /* Cells */,
 			);
 			path = Posts;
+			sourceTree = "<group>";
+		};
+		80C67313235C4BD000391199 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80C67314235C4BDD00391199 /* Author Header View */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		80C67314235C4BDD00391199 /* Author Header View */ = {
+			isa = PBXGroup;
+			children = (
+				80C67315235C4C1500391199 /* AuthorHeaderView.swift */,
+				80C67317235C4C3600391199 /* AuthorHeaderView.xib */,
+			);
+			path = "Author Header View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +496,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C67318235C4C3600391199 /* AuthorHeaderView.xib in Resources */,
 				800C3CFD23587C7E00E8D5BB /* Localizable.strings in Resources */,
 				804EC80B2353570E008F17FD /* LaunchScreen.storyboard in Resources */,
 				804EC8082353570E008F17FD /* Assets.xcassets in Resources */,
@@ -510,6 +533,7 @@
 				800C3CE92357B1A800E8D5BB /* AuthorCellViewModel.swift in Sources */,
 				80C67310235B113800391199 /* PostsViewController.swift in Sources */,
 				800C3D0223587CFC00E8D5BB /* i18n.swift in Sources */,
+				80C67316235C4C1500391199 /* AuthorHeaderView.swift in Sources */,
 				80C67309235B0F5700391199 /* PostsServices.swift in Sources */,
 				804EC83523535CEE008F17FD /* Author.swift in Sources */,
 				804EC83723535D85008F17FD /* Address.swift in Sources */,

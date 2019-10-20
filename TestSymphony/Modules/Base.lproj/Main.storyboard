@@ -60,6 +60,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Le-du-plu"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="cS4-Vq-2fn" id="j6M-XA-bTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt6-3Q-d2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

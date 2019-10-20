@@ -69,11 +69,6 @@ class AuthorsViewController: UIViewController {
 
 extension AuthorsViewController: UITableViewDataSource {
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        guard let viewModel = viewModel else { return 0 }
-        return viewModel.sectionsCount
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
         return viewModel.rowsCount

@@ -29,10 +29,6 @@ class AuthorsViewModel {
     
     // MARK: - Public Inerfaces
     
-    var sectionsCount: Int {
-        return 1
-    }
-    
     var rowsCount: Int {
         return authors.value.count
     }

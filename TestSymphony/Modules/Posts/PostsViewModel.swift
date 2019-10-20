@@ -26,6 +26,18 @@ class PostsViewModel {
         self.author = author
     }
     
+    // MARK: - Public Inerfaces
+    
+    var rowsCount: Int {
+        return posts.value.count
+    }
+    
+    // MARK: - Functions
+    
+    func authorViewModel() -> AuthorCellViewModel {
+        return AuthorCellViewModel(author: author)
+    }
+    
 }
 
 // MARK: - Requests
