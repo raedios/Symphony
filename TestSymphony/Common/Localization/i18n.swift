@@ -18,5 +18,6 @@ struct i18n {
 
     static var authorsTitle: String { return "title.authors".localized }
     static var postsTitle: String { return "title.posts".localized }
+    static var commentsTitle: String { return "title.comments".localized }
     
 }

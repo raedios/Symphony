@@ -62,6 +62,8 @@
 		80C6732B235C742E00391199 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732A235C742E00391199 /* CommentsViewController.swift */; };
 		80C6732D235C743B00391199 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732C235C743B00391199 /* CommentsViewModel.swift */; };
 		80C67330235C776D00391199 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732F235C776D00391199 /* Appearance.swift */; };
+		80C67332235C7D9400391199 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67331235C7D9400391199 /* Comments.swift */; };
+		80C67334235C7E6300391199 /* CommentsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67333235C7E6300391199 /* CommentsServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		80C6732A235C742E00391199 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		80C6732C235C743B00391199 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
 		80C6732F235C776D00391199 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		80C67331235C7D9400391199 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		80C67333235C7E6300391199 /* CommentsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				804EC84523536247008F17FD /* Authors.swift */,
+				80C67331235C7D9400391199 /* Comments.swift */,
 				80C67306235B0EB200391199 /* Posts.swift */,
 			);
 			path = Endpoints;
@@ -404,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				804EC84B23536644008F17FD /* AuthorsServices.swift */,
+				80C67333235C7E6300391199 /* CommentsServices.swift */,
 				80C67308235B0F5700391199 /* PostsServices.swift */,
 			);
 			path = Services;
@@ -604,6 +610,7 @@
 				80C67329235C741B00391199 /* CommentsRouter.swift in Sources */,
 				80C67309235B0F5700391199 /* PostsServices.swift in Sources */,
 				804EC83523535CEE008F17FD /* Author.swift in Sources */,
+				80C67334235C7E6300391199 /* CommentsServices.swift in Sources */,
 				804EC83723535D85008F17FD /* Address.swift in Sources */,
 				804EC82B23535B75008F17FD /* Animator.swift in Sources */,
 				800C3CF923586F8700E8D5BB /* UIImageView+Extension.swift in Sources */,
@@ -629,6 +636,7 @@
 				80C6730E235B112500391199 /* PostsRouter.swift in Sources */,
 				804EC83F23536044008F17FD /* APIError.swift in Sources */,
 				80C67307235B0EB200391199 /* Posts.swift in Sources */,
+				80C67332235C7D9400391199 /* Comments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,7 +25,7 @@ extension Posts: Endpoint {
         }
     }
     
-    var urlQueryItems: [URLQueryItem] {
+    var urlQueryItems: [URLQueryItem]? {
         switch self {
         case .postsOf(let authorId):
             

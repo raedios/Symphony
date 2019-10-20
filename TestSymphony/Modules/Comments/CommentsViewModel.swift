@@ -15,6 +15,10 @@ class CommentsViewModel {
     private var router: CommentsRouter.Routes?
     private var post: Post
     
+    // MARK: -
+    
+    var comments: Box<[Comment]> = Box([Comment]())
+    
     // MARK: - Init
     
     init(router: CommentsRouter.Routes, post: Post) {
@@ -22,4 +26,22 @@ class CommentsViewModel {
         self.post = post
     }
     
+}
+
+// MARK: - Requests
+
+extension CommentsViewModel {
+    
+    func fetchComments() {
+        
+        CommentsServices().fetchComments(ofPost: post) { (result, _) in
+            
+            switch result {
+            case .success(let comments):
+                self.comments.value = comments?.sorted (by: { $0.date < $1.date }) ?? [Comment]()
+            case .failure(let error):
+                print("Error \(error.localizedDescription)")
+            }
+        }
+    }
 }

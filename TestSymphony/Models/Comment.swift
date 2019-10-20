@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Comment {
+struct Comment: Decodable {
     
     // MARK: - Properties
     

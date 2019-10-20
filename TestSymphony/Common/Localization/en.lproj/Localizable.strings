@@ -10,3 +10,4 @@
 
 "title.authors" = "Authors";
 "title.posts" = "%@'s posts";
+"title.comments" = "Comments";

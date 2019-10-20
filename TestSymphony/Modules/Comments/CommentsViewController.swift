@@ -32,6 +32,37 @@ class CommentsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocalization()
+        setupTableView()
+        bind()
+        
+        viewModel?.fetchComments()
+    }
+    
+    // MARK: - Local Helpers
+    
+    private func setupLocalization() {
+        self.title = i18n.commentsTitle
+    }
+    
+    private func setupTableView() {
+        
+//        tableView.delegate = self
+//        tableView.dataSource = self
 
+        // Register Header
+        //tableView.register(UINib(nibName: AuthorHeaderView.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: AuthorHeaderView.identifier)
+        
+        // Register Cells
+        //tableView.register(UINib.nib(named: PostCell.identifier), forCellReuseIdentifier: PostCell.identifier)
+    }
+    
+    private func bind() {
+        
+        viewModel?.comments.bind { [unowned self] in
+            if $0.count > 0 {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ protocol Endpoint {
     
     var base: String { get }
     var path: String { get }
-    var urlQueryItems: [URLQueryItem] { get }
+    var urlQueryItems: [URLQueryItem]? { get }
 }
 
 extension Endpoint {

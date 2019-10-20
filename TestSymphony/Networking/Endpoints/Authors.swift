@@ -25,7 +25,7 @@ extension Authors: Endpoint {
         }
     }
     
-    var urlQueryItems: [URLQueryItem] {
+    var urlQueryItems: [URLQueryItem]? {
         switch self {
         case .authors(let page):
             
