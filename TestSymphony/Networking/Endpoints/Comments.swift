@@ -28,7 +28,13 @@ extension Comments: Endpoint {
     var urlQueryItems: [URLQueryItem]? {
         switch self {
         case .commentsOf( _):
-            return nil
+            
+            var urlQueryItem = [URLQueryItem]()
+            
+            urlQueryItem.append(URLQueryItem(name: "_sort", value: "date"))
+            urlQueryItem.append(URLQueryItem(name: "_order", value: "asc"))
+            
+            return urlQueryItem
         }
     }
 }

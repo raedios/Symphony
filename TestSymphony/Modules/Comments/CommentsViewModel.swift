@@ -38,7 +38,7 @@ extension CommentsViewModel {
             
             switch result {
             case .success(let comments):
-                self.comments.value = comments?.sorted (by: { $0.date < $1.date }) ?? [Comment]()
+                self.comments.value = comments ?? [Comment]()
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
             }
