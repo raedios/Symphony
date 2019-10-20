@@ -57,6 +57,11 @@
 		80C6731F235C5FBC00391199 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6731E235C5FBC00391199 /* PostCellViewModel.swift */; };
 		80C67322235C64D400391199 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67321235C64D400391199 /* Utilities.swift */; };
 		80C67324235C6A2800391199 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67323235C6A2800391199 /* Date+Extension.swift */; };
+		80C67327235C741300391199 /* CommentsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67326235C741300391199 /* CommentsRoute.swift */; };
+		80C67329235C741B00391199 /* CommentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C67328235C741B00391199 /* CommentsRouter.swift */; };
+		80C6732B235C742E00391199 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732A235C742E00391199 /* CommentsViewController.swift */; };
+		80C6732D235C743B00391199 /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732C235C743B00391199 /* CommentsViewModel.swift */; };
+		80C67330235C776D00391199 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C6732F235C776D00391199 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +130,11 @@
 		80C6731E235C5FBC00391199 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		80C67321235C64D400391199 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		80C67323235C6A2800391199 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		80C67326235C741300391199 /* CommentsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRoute.swift; sourceTree = "<group>"; };
+		80C67328235C741B00391199 /* CommentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRouter.swift; sourceTree = "<group>"; };
+		80C6732A235C742E00391199 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		80C6732C235C743B00391199 /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		80C6732F235C776D00391199 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,11 +178,12 @@
 		800C3CDF2357B09A00E8D5BB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				80C67320235C649000391199 /* Utilities */,
+				80C6732E235C776100391199 /* Appearance */,
 				800C3CEF2357B93100E8D5BB /* Base Elements */,
 				800C3CE02357B0A400E8D5BB /* Box */,
 				800C3CEC2357B5AA00E8D5BB /* Extensions */,
 				800C3CFA23587C3A00E8D5BB /* Localization */,
+				80C67320235C649000391199 /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -286,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				800C3CD52357A90500E8D5BB /* Authors */,
+				80C67325235C735E00391199 /* Comments */,
 				800C3D0523587DA500E8D5BB /* Launch Screen */,
 				80C6730A235B10EC00391199 /* Posts */,
 				804EC80423535709008F17FD /* Main.storyboard */,
@@ -445,6 +457,25 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		80C67325235C735E00391199 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				80C67326235C741300391199 /* CommentsRoute.swift */,
+				80C67328235C741B00391199 /* CommentsRouter.swift */,
+				80C6732A235C742E00391199 /* CommentsViewController.swift */,
+				80C6732C235C743B00391199 /* CommentsViewModel.swift */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		80C6732E235C776100391199 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				80C6732F235C776D00391199 /* Appearance.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -559,6 +590,7 @@
 				800C3CEE2357B5BB00E8D5BB /* UIApplication+Extension.swift in Sources */,
 				804EC84423536209008F17FD /* Endpoint.swift in Sources */,
 				800C3CD92357A92200E8D5BB /* AuthorsRouter.swift in Sources */,
+				80C6732B235C742E00391199 /* CommentsViewController.swift in Sources */,
 				80C67322235C64D400391199 /* Utilities.swift in Sources */,
 				800C3D0423587D3B00E8D5BB /* String+Extension.swift in Sources */,
 				800C3CE62357B19500E8D5BB /* AuthorCell.swift in Sources */,
@@ -569,6 +601,7 @@
 				80C67310235B113800391199 /* PostsViewController.swift in Sources */,
 				800C3D0223587CFC00E8D5BB /* i18n.swift in Sources */,
 				80C67316235C4C1500391199 /* AuthorHeaderView.swift in Sources */,
+				80C67329235C741B00391199 /* CommentsRouter.swift in Sources */,
 				80C67309235B0F5700391199 /* PostsServices.swift in Sources */,
 				804EC83523535CEE008F17FD /* Author.swift in Sources */,
 				804EC83723535D85008F17FD /* Address.swift in Sources */,
@@ -577,6 +610,7 @@
 				804EC849235363E5008F17FD /* APIConstents.swift in Sources */,
 				80C6730C235B111800391199 /* PostsRoute.swift in Sources */,
 				804EC83B23535EB6008F17FD /* Comment.swift in Sources */,
+				80C67327235C741300391199 /* CommentsRoute.swift in Sources */,
 				800C3CE22357B0AD00E8D5BB /* Box.swift in Sources */,
 				800C3CF12357B94900E8D5BB /* CustomImageView.swift in Sources */,
 				800C3D0A2358856100E8D5BB /* NetworkingUtilities.swift in Sources */,
@@ -588,6 +622,8 @@
 				804EC84C23536644008F17FD /* AuthorsServices.swift in Sources */,
 				800C3CD72357A91900E8D5BB /* AuthorsRoute.swift in Sources */,
 				804EC80123535709008F17FD /* AppDelegate.swift in Sources */,
+				80C67330235C776D00391199 /* Appearance.swift in Sources */,
+				80C6732D235C743B00391199 /* CommentsViewModel.swift in Sources */,
 				804EC84623536247008F17FD /* Authors.swift in Sources */,
 				80C67312235B114300391199 /* PostsViewModel.swift in Sources */,
 				80C6730E235B112500391199 /* PostsRouter.swift in Sources */,

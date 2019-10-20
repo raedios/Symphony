@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class PostsRouter: Router<PostsViewController> {
+final class PostsRouter: Router<PostsViewController>, CommentsRoute {
     
-    typealias Routes = Closable
+    typealias Routes = Closable & CommentsRoute
 }

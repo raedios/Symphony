@@ -13,7 +13,7 @@ struct Comment {
     // MARK: - Properties
     
     var id: Int
-    var date: Date
+    var date: String
     var body: String
     var userName: String
     var email: String

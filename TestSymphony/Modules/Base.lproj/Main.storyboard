@@ -68,5 +68,35 @@
             </objects>
             <point key="canvasLocation" x="1053.6231884057972" y="105.80357142857143"/>
         </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="yh6-K0-Qqs">
+            <objects>
+                <viewController storyboardIdentifier="CommentsViewController" id="nMM-zq-eU5" customClass="CommentsViewController" customModule="TestSymphony" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KWJ-4j-L53">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wpc-i1-6Cc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Wpc-i1-6Cc" firstAttribute="top" secondItem="KWJ-4j-L53" secondAttribute="top" id="8m2-h2-uim"/>
+                            <constraint firstItem="Wpc-i1-6Cc" firstAttribute="trailing" secondItem="cjB-tI-Uo2" secondAttribute="trailing" id="CuE-n1-jo6"/>
+                            <constraint firstAttribute="bottom" secondItem="Wpc-i1-6Cc" secondAttribute="bottom" id="c0L-uS-6H8"/>
+                            <constraint firstItem="Wpc-i1-6Cc" firstAttribute="leading" secondItem="cjB-tI-Uo2" secondAttribute="leading" id="dla-6K-cZd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjB-tI-Uo2"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Wpc-i1-6Cc" id="1MO-Xh-PPA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKc-Z9-NKv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1984.057971014493" y="105.80357142857143"/>
+        </scene>
     </scenes>
 </document>

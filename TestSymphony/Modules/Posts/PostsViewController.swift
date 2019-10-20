@@ -44,7 +44,7 @@ class PostsViewController: UIViewController {
     // MARK: - Local Helpers
     
     private func setupLocalization() {
-        self.title = i18n.authorsTitle
+        self.title = String(format: i18n.postsTitle, viewModel?.authorsFirstName ?? "") 
     }
     
     private func setupTableView() {
@@ -90,7 +90,7 @@ extension PostsViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableView DataSource Methods
+// MARK: - UITableView Delegate Methods
 
 extension PostsViewController: UITableViewDelegate {
     
@@ -107,5 +107,14 @@ extension PostsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return authorHeaderSectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Deselect the row
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // Open selected author's posts
+        viewModel?.openPostsComments(atIndex: indexPath.row)
     }
 }

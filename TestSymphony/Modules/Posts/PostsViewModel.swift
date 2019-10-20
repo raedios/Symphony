@@ -32,6 +32,11 @@ class PostsViewModel {
         return posts.value.count
     }
     
+    var authorsFirstName: String {
+        let firstName = author.name.split(separator: " ").first
+        return String(firstName ?? "")
+    }
+    
     // MARK: - Functions
     
     func authorViewModel() -> AuthorCellViewModel {
@@ -40,6 +45,12 @@ class PostsViewModel {
     
     func postViewModel(atIndex index: Int) -> PostCellViewModel {
         return PostCellViewModel(post: posts.value[index])
+    }
+    
+    // MARK: - Routing
+    
+    func openPostsComments(atIndex index: Int) {
+        router?.openComments(ofPost: posts.value[index])
     }
 }
 
