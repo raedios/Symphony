@@ -70,7 +70,8 @@ class AuthorsViewController: UIViewController {
 extension AuthorsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.sectionsCount
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,5 +120,7 @@ extension AuthorsViewController: UITableViewDelegate {
         // Deselect the row
         tableView.deselectRow(at: indexPath, animated: true)
         
+        // Open selected author's posts
+        viewModel?.openAuthorsPosts(atIndex: indexPath.row)
     }
 }

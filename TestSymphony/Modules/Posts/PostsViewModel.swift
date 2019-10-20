@@ -15,6 +15,10 @@ class PostsViewModel {
     private var router: PostsRouter.Routes?
     private var author: Author
     
+    // MARK: -
+    
+    var posts: Box<[Post]> = Box([Post]())
+    
     // MARK: - Init
     
     init(router: PostsRouter.Routes, author: Author) {
@@ -22,4 +26,22 @@ class PostsViewModel {
         self.author = author
     }
     
+}
+
+// MARK: - Requests
+
+extension PostsViewModel {
+    
+    func fetchPosts() {
+        
+        PostsServices().fetchPosts(ofAuthor: author) { (result, _) in
+            
+            switch result {
+            case .success(let posts):
+                self.posts.value = posts ?? [Post]()
+            case .failure(let error):
+                print("Error \(error.localizedDescription)")
+            }
+        }
+    }
 }

@@ -12,6 +12,8 @@ class PostsViewController: UIViewController {
     
     // MARK: - Views
     
+    @IBOutlet var tableView: UITableView!
+    
     // MARK: - Properties
     
     private var viewModel: PostsViewModel?
@@ -30,6 +32,34 @@ class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupLocalization()
+        setupTableView()
+        bind()
+        
+        viewModel?.fetchPosts()
+    }
+    
+    // MARK: - Local Helpers
+    
+    private func setupLocalization() {
+        self.title = i18n.authorsTitle
+    }
+    
+    private func setupTableView() {
+        
+        //tableView.delegate = self
+        //tableView.dataSource = self
+        
+        // Register Cells
+        //tableView.register(UINib.nib(named: AuthorCell.identifier), forCellReuseIdentifier: AuthorCell.identifier)
+    }
+    
+    private func bind() {
+        
+        viewModel?.posts.bind { [unowned self] in
+            if $0.count > 0 {
+                self.tableView.reloadData()
+            }
+        }
     }
 }

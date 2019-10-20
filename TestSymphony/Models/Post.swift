@@ -13,7 +13,7 @@ struct Post: Decodable {
     // MARK: - Properties
     
     var id: Int
-    var date: Date
+    var date: String
     var title: String
     var body: String
     var imageUrl: String

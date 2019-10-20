@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class AuthorsRouter: Router<AuthorsViewController> {
+final class AuthorsRouter: Router<AuthorsViewController>, PostsRoute {
     
-    typealias Routes = Closable
+    typealias Routes = PostsRoute
 }

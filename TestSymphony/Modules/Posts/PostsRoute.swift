@@ -7,3 +7,28 @@
 //
 
 import Foundation
+
+protocol PostsRoute {
+    
+    var postsRouteTransition: Transition { get }
+    func openPosts(ofAuthor author: Author)
+}
+
+extension PostsRoute where Self: RouterProtocol {
+
+    var postsRouteTransition: Transition {
+        return PushTransition()
+    }
+
+    func openPosts(ofAuthor author: Author) {
+        
+        let router = PostsRouter()
+        let viewModel = PostsViewModel(router: router, author: author)
+        let viewController = PostsViewController.instantiate(viewModel: viewModel)
+        router.viewController = viewController
+        
+        let transition = postsRouteTransition
+        router.openTransition = transition
+        open(viewController, transition: transition)
+    }
+}

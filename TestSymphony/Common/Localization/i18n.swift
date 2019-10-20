@@ -17,5 +17,6 @@ struct i18n {
     // MARK: - Titles
 
     static var authorsTitle: String { return "title.authors".localized }
+    static var postsTitle: String { return "title.posts".localized }
     
 }

@@ -9,3 +9,4 @@
 // MARK: - Titles
 
 "title.authors" = "Authors";
+"title.posts" = "%@'s posts";

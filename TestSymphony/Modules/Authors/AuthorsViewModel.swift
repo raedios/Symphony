@@ -30,7 +30,7 @@ class AuthorsViewModel {
     // MARK: - Public Inerfaces
     
     var sectionsCount: Int {
-        return 2
+        return 1
     }
     
     var rowsCount: Int {
@@ -45,6 +45,12 @@ class AuthorsViewModel {
     
     func authorViewModel(atIndex index: Int) -> AuthorCellViewModel {
         return AuthorCellViewModel(author: authors.value[index])
+    }
+    
+    // MARK: - Rounting
+    
+    func openAuthorsPosts(atIndex index: Int) {
+        router?.openPosts(ofAuthor: authors.value[index])
     }
 }
 

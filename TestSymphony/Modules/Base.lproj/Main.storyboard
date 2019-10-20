@@ -45,13 +45,25 @@
                     <view key="view" contentMode="scaleToFill" id="XEQ-Hn-Nsi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-Vq-2fn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="cS4-Vq-2fn" secondAttribute="bottom" id="7O0-sd-voz"/>
+                            <constraint firstItem="cS4-Vq-2fn" firstAttribute="leading" secondItem="4Le-du-plu" secondAttribute="leading" id="CT2-he-iKW"/>
+                            <constraint firstItem="cS4-Vq-2fn" firstAttribute="trailing" secondItem="4Le-du-plu" secondAttribute="trailing" id="Peq-dJ-p2f"/>
+                            <constraint firstItem="cS4-Vq-2fn" firstAttribute="top" secondItem="XEQ-Hn-Nsi" secondAttribute="top" id="rXz-Wa-sqj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Le-du-plu"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt6-3Q-d2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="106"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="105.80357142857143"/>
         </scene>
     </scenes>
 </document>
