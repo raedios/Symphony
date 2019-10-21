@@ -18,6 +18,7 @@ class CommentsViewModel {
     // MARK: -
     
     var comments: Box<[Comment]> = Box([Comment]())
+    let errorMessage: Box<String> = Box(String())
     
     // MARK: - Init
     
@@ -64,6 +65,7 @@ extension CommentsViewModel {
                 self.comments.value = comments ?? [Comment]()
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
+                self.errorMessage.value = error.localizedDescription
             }
         }
     }

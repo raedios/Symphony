@@ -18,6 +18,7 @@ class PostsViewModel {
     // MARK: -
     
     var posts: Box<[Post]> = Box([Post]())
+    let errorMessage: Box<String> = Box(String())
     
     // MARK: - Init
     
@@ -67,6 +68,7 @@ extension PostsViewModel {
                 self.posts.value = posts?.sorted (by: { $0.date < $1.date }) ?? [Post]()
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
+                self.errorMessage.value = error.localizedDescription
             }
         }
     }

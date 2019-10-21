@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let authorHeaderSectionHeight: CGFloat = 196.0
 
-class PostsViewController: UIViewController {
+class PostsViewController: BaseViewController {
     
     // MARK: - Views
     
@@ -66,6 +66,12 @@ class PostsViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        viewModel?.errorMessage.bind(listener: { [unowned self] in
+            if !$0.isEmpty {
+                self.showAlert(title: i18n.errorTitle, message: $0, defaultAction: i18n.okButton)
+            }
+        })
     }
 }
 

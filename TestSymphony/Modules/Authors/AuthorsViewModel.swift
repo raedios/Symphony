@@ -19,6 +19,7 @@ class AuthorsViewModel {
     // MARK: -
     
     var authors: Box<[Author]> = Box([Author]())
+    let errorMessage: Box<String> = Box(String())
     var fetchingMore = false
 
     // MARK: - Init
@@ -77,6 +78,7 @@ extension AuthorsViewModel {
                 }
             case .failure(let error):
                 print("Error \(error.localizedDescription)")
+                self.errorMessage.value = error.localizedDescription
             }
         }
     }

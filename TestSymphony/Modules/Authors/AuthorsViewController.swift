@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthorsViewController: UIViewController {
+class AuthorsViewController: BaseViewController {
 
     // MARK: - Views
     
@@ -62,6 +62,12 @@ class AuthorsViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        viewModel?.errorMessage.bind(listener: { [unowned self] in
+            if !$0.isEmpty {
+                self.showAlert(title: i18n.errorTitle, message: $0, defaultAction: i18n.okButton)
+            }
+        })
     }
 }
 

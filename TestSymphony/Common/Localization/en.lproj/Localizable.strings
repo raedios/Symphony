@@ -11,3 +11,11 @@
 "title.authors" = "Authors";
 "title.posts" = "%@'s posts";
 "title.comments" = "Comments";
+
+// MARK: - Buttons
+
+"button.ok" = "Ok";
+
+// MARK: - Errors
+
+"error.title" = "Error";

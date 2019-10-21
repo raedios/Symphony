@@ -20,4 +20,11 @@ struct i18n {
     static var postsTitle: String { return "title.posts".localized }
     static var commentsTitle: String { return "title.comments".localized }
     
+    // MARK: - Buttons
+
+    static var okButton: String { return "button.ok".localized }
+
+    // MARK: - Errors
+    
+    static var errorTitle: String { return "error.title".localized }
 }
