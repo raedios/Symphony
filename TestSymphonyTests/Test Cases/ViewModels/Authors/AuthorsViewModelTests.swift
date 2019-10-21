@@ -7,27 +7,50 @@
 //
 
 import XCTest
+@testable import TestSymphony
 
 class AuthorsViewModelTests: XCTestCase {
-
+    
+    // MARK: - Properties
+    
+    var sut: AuthorsViewModel!
+    
+    // MARK: - Set Up & Tear Down
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        // Load Stub
+        let data = loadStubFromBundle(withName: "Authors", extension: "json")
+        let authors: [Author] = try! JSONDecoder().decode([Author].self, from: data)
+        
+        // Initialize View Model
+        let router = AuthorsRouter()
+        sut = AuthorsViewModel(router: router)
+        sut.authors.value = authors
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    // MARK: - Tests
+    
+    func testAuthorsCount() {
+        XCTAssertEqual(sut.rowsCount, 20)
+    }
+    
+    func testIsLastPage() {
+        XCTAssertFalse(sut.isLastPage)
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAuthorViewModel() {
+        
+        let authorViewModel = sut.authorViewModel(atIndex: 2)
+        
+        XCTAssertEqual(authorViewModel.avatarUrl, "https://s3.amazonaws.com/uifaces/faces/twitter/jamiebrittain/128.jpg")
+        XCTAssertEqual(authorViewModel.email, "robbie_kihn@yahoo.com")
+        XCTAssertEqual(authorViewModel.name, "Lena Grant")
+        XCTAssertEqual(authorViewModel.userName, "Rosalind_Morar")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

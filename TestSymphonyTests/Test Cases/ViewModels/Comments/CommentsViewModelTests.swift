@@ -7,27 +7,61 @@
 //
 
 import XCTest
+@testable import TestSymphony
 
 class CommentsViewModelTests: XCTestCase {
-
+    
+    // MARK: - Properties
+    
+    var sut: CommentsViewModel!
+    
+    // MARK: - Set Up & Tear Down
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        // Load Stub
+        let data = loadStubFromBundle(withName: "Comments", extension: "json")
+        let comments: [Comment] = try! JSONDecoder().decode([Comment].self, from: data)
+        
+        // Init Post
+        let post = Post(id: 252,
+                        date: "2017-11-07T20:58:03.784Z",
+                        title: "Nihil consequatur modi voluptas qui est numquam iure perspiciatis.",
+                        body: "Beatae eligendi laborum eos et sed sint iure autem dolores. Suscipit ut provident voluptatem voluptatem labore ut suscipit est qui. Aspernatur possimus dolore.",
+                        imageUrl: "https://picsum.photos/id/480/640/480",
+                        authorId: 2)
+        
+        // Initialize View Model
+        let router = CommentsRouter()
+        sut = CommentsViewModel(router: router, post: post)
+        sut.comments.value = comments
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    // MARK: - Tests
+    
+    func testSectionCount() {
+        XCTAssertEqual(sut.sectionCount, 2)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testRowCountForFirstSection() {
+        XCTAssertEqual(sut.rowsCount(for: 0), 1)
     }
-
+    
+    func testRowCountForSecondSection() {
+        XCTAssertEqual(sut.rowsCount(for: 1), sut.comments.value.count)
+    }
+    
+    func testPostDetailViewModel() {
+        
+        let postViewModel = sut.postDetailViewModel()
+        XCTAssertEqual(postViewModel.imageUrl, "https://picsum.photos/id/480/640/480")
+        XCTAssertEqual(postViewModel.title, "Nihil consequatur modi voluptas qui est numquam iure perspiciatis.")
+        XCTAssertEqual(postViewModel.body, "Beatae eligendi laborum eos et sed sint iure autem dolores. Suscipit ut provident voluptatem voluptatem labore ut suscipit est qui. Aspernatur possimus dolore.")
+        XCTAssertEqual(postViewModel.date, "Nov 07, 2017")
+    }
 }

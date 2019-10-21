@@ -7,27 +7,46 @@
 //
 
 import XCTest
+@testable import TestSymphony
 
 class CommentCellViewModelTests: XCTestCase {
-
+    
+    // MARK: - Properties
+    
+    var sut: CommentCellViewModel!
+    
+    // MARK: - Set Up & Tear Down
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        // Load Stub
+        let data = loadStubFromBundle(withName: "Comments", extension: "json")
+        let comments: [Comment] = try! JSONDecoder().decode([Comment].self, from: data)
+        
+        // Initialize View Model
+        sut = CommentCellViewModel(comment: comments[7])
     }
-
+    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    // MARK: - Tests
+    
+    func testAvatarUrl() {
+        XCTAssertEqual(sut.avatarUrl, "https://s3.amazonaws.com/uifaces/faces/twitter/geshan/128.jpg")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testUserName() {
+        XCTAssertEqual(sut.userName, "Lance39")
     }
-
+    
+    func testBody() {
+        XCTAssertEqual(sut.body, "Perferendis provident dolorem recusandae atque voluptas voluptate a. Eos quod est aspernatur quam illum. Quidem fugit qui deleniti aperiam omnis eum maiores cupiditate.")
+    }
+    
+    func testDate() {
+        XCTAssertEqual(sut.date, "Feb 24, 2017")
+    }
 }
